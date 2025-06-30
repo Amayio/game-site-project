@@ -1,0 +1,138 @@
+[
+	{
+		"id": 3,
+		"title": "Patch 1.0: A po burzy przychodzi słońce.",
+		"date": "2025-06-30",
+		"blocks": [
+			{
+				"type": "list",
+				"title": "Zmiany klas postaci",
+				"items": [
+					{
+						"title": "Wojownik",
+						"changes": [
+							{
+								"text": "Zwiększono obrażenia umiejętności 'Rąbnięcie' o 15%",
+								"changeType": "buff"
+							}
+						]
+					},
+					{
+						"title": "Łucznik",
+						"changes": [
+							{
+								"text": "Zmniejszono zasięg 'Strzały burzy' o 10%",
+								"changeType": "nerf"
+							}
+						]
+					},
+					{
+						"title": "Mag",
+						"changes": [
+							{
+								"text": "Naprawiono błąd z podwójnym rzuceniem czaru",
+								"changeType": "neutral"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "paragraph",
+				"text": "Oprócz tego wprowadzono kilka poprawek do systemu dobierania graczy."
+			},
+			{
+				"type": "image",
+				"src": "balance-chart.jpg",
+				"alt": "Zmiany balansu",
+				"width": "300",
+				"align": "right"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"title": "Patch 0.9.5: Nowe umiejętności i optymalizacje",
+		"date": "2025-06-15",
+		"blocks": [
+			{
+				"type": "list",
+				"title": "Zmiany w rozgrywce",
+				"items": [
+					{
+						"title": "Zabójca",
+						"changes": [
+							{
+								"text": "Dodano nową umiejętność 'Cichy Cios'",
+								"changeType": "buff"
+							},
+							{
+								"text": "Zmniejszono czas odnowienia 'Zniknięcia' z 15s do 12s",
+								"changeType": "buff"
+							}
+						]
+					},
+					{
+						"title": "Ogólne",
+						"changes": [
+							{
+								"text": "Poprawiono płynność animacji podczas walki",
+								"changeType": "neutral"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "paragraph",
+				"text": "Aktualizacja znacząco poprawia balans rozgrywki dla graczy PvP."
+			}
+		]
+	},
+	{
+		"id": 1,
+		"title": "Patch 0.9.0: Wprowadzenie systemu gildii",
+		"date": "2025-05-20",
+		"blocks": [
+			{
+				"type": "list",
+				"title": "Nowe funkcje",
+				"items": [
+					{
+						"title": "Gildie",
+						"changes": [
+							{
+								"text": "Wprowadzono system tworzenia i zarządzania gildiami",
+								"changeType": "neutral"
+							},
+							{
+								"text": "Liderzy gildii mogą zapraszać i usuwać członków",
+								"changeType": "neutral"
+							}
+						]
+					},
+					{
+						"title": "Interfejs",
+						"changes": [
+							{
+								"text": "Dodano zakładkę 'Gildia' w menu głównym",
+								"changeType": "neutral"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "paragraph",
+				"text": "Jest to największa aktualizacja społecznościowa od czasu uruchomienia gry!"
+			},
+			{
+				"type": "image",
+				"src": "guild-system.jpg",
+				"alt": "Nowy system gildii",
+				"width": "500",
+				"align": "left"
+			}
+		]
+	}
+]

@@ -1,47 +1,42 @@
-<header class="fixed top-0 left-0 w-full z-20">
-  <div
-    class="flex justify-between items-center max-w-[1200px] w-full mx-auto px-8 py-4
-           bg-[rgba(9,9,9,0.65)] border border-transparent rounded-[16px]
-           shadow-lg backdrop-blur-sm transition-all duration-300 ease-in-out
-           header_wrapper"
-  >
+<header class="header">
+  <div class="header_wrapper">
     <div class="logo_container">
       <a href="#">
         <img src="{{ template_path }}/images/logo.png" alt="Logo" width="80" class="logo" />
       </a>
     </div>
 
-    <nav class="flex gap-4 text-lg font-bold nav">
-      <a href="{{ getLink('downloads') }}" class="relative nav_item hover:text-red-700">
+    <nav class="nav">
+      <a href="{{ getLink('downloads') }}" class="nav_item">
         Game Guide
-        <span class="absolute left-0 bottom-0 w-full h-2 bg-red-700 opacity-70 -z-10 transition-all duration-300"></span>
+        <span class="nav_underline"></span>
       </a>
-      <a href="{{ getLink('downloads') }}" class="relative nav_item hover:text-red-700">
+      <a href="{{ getLink('downloads') }}" class="nav_item">
         Download
-        <span class="absolute left-0 bottom-0 w-full h-2 bg-red-700 opacity-70 -z-10 transition-all duration-300"></span>
+        <span class="nav_underline"></span>
       </a>
-      <a href="{{ getLink('highscores') }}" class="relative nav_item hover:text-red-700">
+      <a href="{{ getLink('highscores') }}" class="nav_item">
         Premium
-        <span class="absolute left-0 bottom-0 w-full h-2 bg-red-700 opacity-70 -z-10 transition-all duration-300"></span>
+        <span class="nav_underline"></span>
       </a>
-      <a href="{{ getLink('account/create') }}" class="relative nav_item hover:text-red-700">
+      <a href="{{ getLink('account/create') }}" class="nav_item">
         Create Account
-        <span class="absolute left-0 bottom-0 w-full h-2 bg-red-700 opacity-70 -z-10 transition-all duration-300"></span>
+        <span class="nav_underline"></span>
       </a>
-      <a href="({{ template_path }})" class="relative nav_item hover:text-red-700">
+      <a href="({{ template_path }})" class="nav_item">
         Log in
-        <span class="absolute left-0 bottom-0 w-full h-2 bg-red-700 opacity-70 -z-10 transition-all duration-300"></span>
+        <span class="nav_underline"></span>
       </a>
     </nav>
 
-    <div class="flex flex-col items-center justify-center gap-1 text-center server_status">
-      <h2 class="text-white font-semibold text-lg">Server Status</h2>
+    <div class="server_status">
+      <h2 class="status_heading">Server Status</h2>
       {% if not status.online %}
-        <p class="font-bold text-red-600 offline_status">Status: <span class="offline font-bold">Offline</span></p>
+        <p class="offline_status">Status: <span class="offline">Offline</span></p>
       {% else %}
-        <p class="font-bold text-green-700 online_status">Status: <span class="online font-bold">Online</span></p>
-        <p class="players_online font-bold"><span>Players Online:</span> {{ status.players }} / {{ status.playersMax }}</p>
-        <p class="uptime font-bold"><span>Uptime:</span> {{ status.uptimeReadable }}</p>
+        <p class="online_status">Status: <span class="online">Online</span></p>
+        <p class="players_online"><span>Players Online:</span> {{ status.players }} / {{ status.playersMax }}</p>
+        <p class="uptime"><span>Uptime:</span> {{ status.uptimeReadable }}</p>
       {% endif %}
     </div>
   </div>

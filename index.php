@@ -39,7 +39,7 @@ if (isset($standalone_pages[PAGE])) {
         </nav>
 
         <div class="server_status">
-            <h2>Server Status</h2>
+            <p class="status_title">Server Status</p>
             <?php if (!$status['online']): ?>
                 <p class="offline_status">Status: <span class="offline">Offline</span></p>
             <?php else: ?>
@@ -65,7 +65,15 @@ if (isset($standalone_pages[PAGE])) {
   </div>
 </section>
 
-        <?php echo tickers() . template_place_holder('center_top') . $content; ?>
+<section class="news_section">
+    <h2>NEWS</h2>
+    <div class="news_list">
+
+    </div>
+<button class="loadMoreBtn">Load more</button>
+</section>
+
+         
     </main>
 
     <footer>
@@ -75,5 +83,6 @@ if (isset($standalone_pages[PAGE])) {
 
     <?php echo template_place_holder('body_end'); ?>
     <script src="<?php echo $template_path; ?>/js/script.js"></script>
+    <script type="module" src="<?php echo $template_path; ?>/js/news.js"></script>
 </body>
 </html>
