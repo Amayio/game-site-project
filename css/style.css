@@ -1,3 +1,14 @@
+@font-face {
+	font-family: 'gresham';
+	src: url('../fonts/gresham.ttf') format('truetype');
+	font-display: swap;
+}
+
+:root {
+	--primary: #b0111ebf;
+	--text: #f4f1ee;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -7,11 +18,6 @@
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 40px;
-}
-
-@font-face {
-	font-family: 'gresham';
-	src: url('../fonts/gresham.ttf') format('truetype');
 }
 
 a {
@@ -49,7 +55,6 @@ body {
 	padding: 0.5rem 2rem;
 	max-width: 1200px;
 	width: 100%;
-	border-radius: 18px;
 	background: rgba(9, 9, 9, 0.65);
 	border: 1px solid transparent;
 	border-radius: 16px;
@@ -62,7 +67,7 @@ body {
 .header.shrink .header_wrapper {
 	padding: 0.5rem 4rem;
 	transform: scale(0.95);
-	background: rgba(9, 9, 9, 0.9);
+	background: rgba(9, 9, 9, 0.85);
 	backdrop-filter: blur(5.5px);
 	border: 1px solid rgba(9, 9, 9, 1);
 }
@@ -79,13 +84,13 @@ body {
 }
 
 .nav_item::before {
-	content: '';
-	background-color: rgba(176, 17, 30, 0.75);
 	position: absolute;
+	content: '';
 	left: 0;
 	bottom: 3px;
 	width: 100%;
 	height: 8px;
+	background-color: var(--primary);
 	z-index: -1;
 	transition: all 0.3s ease-in-out;
 }
@@ -95,16 +100,21 @@ a:hover::before {
 	height: 100%;
 }
 
-.server_status {
+.server_status_box {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 0.2rem;
+	gap: 0.25rem;
 }
 
-.status_title {
-	font-style: 1.4rem;
+.server_status {
+	font-size: 1.325rem;
+}
+
+.label,
+.offline_status,
+.online_status {
 	font-weight: bold;
 }
 
@@ -114,19 +124,16 @@ a:hover::before {
 }
 
 .offline {
-	color: rgb(176, 17, 30);
-	font-weight: bold;
+	color: var(--primary);
+	text-transform: uppercase;
 }
 
 .online {
 	color: #006400;
+	text-transform: uppercase;
 }
 
-.players_online span,
-.uptime span {
-	font-weight: bold;
-}
-
+/* HERO SECTION */
 .hero {
 	display: flex;
 	align-items: center;
@@ -207,30 +214,6 @@ a:hover::before {
 	gap: 2rem;
 	margin-inline: auto;
 	max-width: 1200px;
-
-	background-color: #0d0d0d;
-	background-image: radial-gradient(
-			circle,
-			rgba(176, 17, 30, 0.1) 0%,
-			transparent 60%
-		),
-		repeating-linear-gradient(
-			45deg,
-			rgba(255, 255, 255, 0.02) 0px,
-			rgba(255, 255, 255, 0.02) 1px,
-			transparent 1px,
-			transparent 2px
-		),
-		repeating-linear-gradient(
-			-45deg,
-			rgba(255, 255, 255, 0.02) 0px,
-			rgba(255, 255, 255, 0.02) 1px,
-			transparent 1px,
-			transparent 2px
-		),
-		linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 60%, #121212 100%);
-	background-blend-mode: overlay, overlay, overlay, normal;
-	color: #f2f2f2;
 }
 
 .news_section h2 {
@@ -290,4 +273,72 @@ a:hover::before {
 .loadMoreBtn:disabled {
 	background-color: #999;
 	cursor: not-allowed;
+}
+
+/* DROPDOWN */
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown-content {
+	position: absolute;
+	top: 95%;
+	left: 0;
+	background: #1f1f1f;
+	min-width: 500px;
+	display: flex;
+	gap: 2rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: all 0.3s;
+	pointer-events: none;
+	z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.dropdown-category {
+	flex: 1;
+}
+
+.dropdown-category h4 {
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+	color: var(--primary, #b0111ebf);
+}
+
+/* Nowość: 2 kolumny w każdej kategorii */
+.link-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(100px, 1fr));
+	gap: 0.25rem 1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.link-grid li a {
+	display: block;
+	color: #ddd;
+	text-decoration: none;
+	padding: 0.25rem 0;
+}
+
+.link-grid li a:hover {
+	color: white;
+	text-decoration: underline;
 }
