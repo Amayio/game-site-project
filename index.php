@@ -31,34 +31,36 @@ if (isset($standalone_pages[PAGE])) {
             </div>
 
             <nav class="nav">
+                <div class="dropdown">
+                    <button class="nav_item dropdown-toggle" aria-expanded="false">
+                        Game Guide
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-category">
+                            <h4>Server</h4>
+                            <ul class="link-grid">
+                                <li><a href="#">Highscores</a></li>
+                                <li><a href="#">Characters</a></li>
+                                <li><a href="#">Who is Online?</a></li>
+                                <li><a href="#">Last Kills</a></li>
+                                <li><a href="#">Houses</a></li>
+                                <li><a href="#">Guilds</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-category">
+                            <h4>Game</h4>
+                            <ul class="link-grid">
+                                <li><a href="#">World Map</a></li>
+                                <li><a href="#">Shinobi Roster</a></li>
+                                <li><a href="#">Bestiary</a></li>
+                                <li><a href="#">Shinobi Gear</a></li>
+                                <li><a href="#">Tutorials</a></li>
+                                <li><a href="#">Systems</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-
- <div class="nav_item dropdown">
-  <button class="dropdown-toggle" aria-expanded="false">
-    Game Guide
-  </button>
-  <div class="dropdown-content">
-    <div class="dropdown-category">
-      <h4>Classes</h4>
-      <ul class="link-grid">
-        <li><a href="#">Warrior</a></li>
-        <li><a href="#">Mage</a></li>
-        <li><a href="#">Rogue</a></li>
-        <li><a href="#">Paladin</a></li>
-      </ul>
-    </div>
-    <div class="dropdown-category">
-      <h4>Mechanics</h4>
-      <ul class="link-grid">
-        <li><a href="#">Combat</a></li>
-        <li><a href="#">Crafting</a></li>
-        <li><a href="#">Quests</a></li>
-        <li><a href="#">Mounts</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-                
                 <a class="nav_item" href="<?php echo getLink('downloads'); ?>">Download</a>
                 <a class="nav_item" href="<?php echo getLink('highscores'); ?>">Premium</a>
                 <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
@@ -72,7 +74,7 @@ if (isset($standalone_pages[PAGE])) {
                 <?php else: ?>
                     <p class="offline_status">Status: <span class="online">Online</span></p>
                     <p class="players_status">
-                        <span class="label">Players Online:</span> 
+                        <span class="label">Players Online:</span>
                         <?php echo $status['players']; ?> / <?php echo $status['playersMax']; ?>
                     </p>
                     <p class="uptime">
@@ -92,14 +94,17 @@ if (isset($standalone_pages[PAGE])) {
             <div class="hero-content">
                 <h1>Shinobi Chronicles</h1>
                 <p>Forge alliances or wage war — the ninja world is yours to shape.</p>
-                <a href="<?php echo getLink('account/create'); ?>" class="cta-button">Begin Your Shinobi Journey</a>
+                <div class="buttons-box">
+                    <a href="<?php echo getLink('account/create'); ?>" class="cta-button">Begin Shinobi Adventure</a>
+                    <a href="#news" class="goto-news-btn">What's New</a>
+                </div>
             </div>
         </section>
 
-        <section class="news_section">
-            <h2>NEWS</h2>
+        <h2 class="news_title">NEWS</h2>
+        <section id="news" class="news_section">
             <div class="news_list">
-                <!-- news items go here -->
+                
             </div>
             <button class="loadMoreBtn">Load more</button>
         </section>

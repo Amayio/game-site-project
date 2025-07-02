@@ -31,7 +31,7 @@ li {
 
 body {
 	background-color: #111;
-	color: #ddd;
+	color: var(--text);
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
@@ -75,12 +75,76 @@ body {
 .nav {
 	display: flex;
 	gap: 1rem;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown-content {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 45rem;
+	display: flex;
+	gap: 2rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background: rgba(9, 9, 9, 0.85);
+	backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(9, 9, 9, 1);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: all 0.3s;
+	pointer-events: none;
+	z-index: 5;
+}
+
+.dropdown:hover .dropdown-content {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.dropdown-category {
+	flex: 1;
+}
+
+.dropdown-category h4 {
+	margin-block: 1rem;
 	font-size: 1.2rem;
-	font-weight: bold;
+}
+
+.link-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(100px, 1fr));
+	gap: 0.25rem 1rem;
+}
+
+.link-grid li a {
+	display: block;
+	color: var(--text);
+	padding: 0.25rem 0;
+	transition: color 0.3s, transform 0.3s;
+}
+
+.link-grid li a:hover {
+	color: #ffffff;
+	transform: scale(0.95);
 }
 
 .nav_item {
 	position: relative;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--text);
 }
 
 .nav_item::before {
@@ -157,11 +221,13 @@ a:hover::before {
 }
 
 .hero-content {
-	z-index: 1;
-	color: white;
+	display: flex;
+	flex-direction: column;
 	max-width: 60%;
 	padding: 1rem;
 	text-align: center;
+	color: white;
+	z-index: 1;
 }
 
 .hero-content h1 {
@@ -175,16 +241,39 @@ a:hover::before {
 	font-weight: bold;
 }
 
-.cta-button {
-	padding: 1.5rem 2.5rem;
-	background-color: rgb(176, 17, 30);
+.buttons-box {
+	display: flex;
+	justify-content: center;
+	gap: 0.8rem;
+}
+
+.cta-button,
+.goto-news-btn {
 	border-radius: 12px;
+	padding: 1.5rem 2.5rem;
+	font-size: 1.2rem;
 	font-weight: bold;
+	cursor: pointer;
+}
+
+.cta-button {
+	background-color: var(--primary);
 	transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-	background-color: rgb(119, 13, 22);
+	background-color: #770d16;
+}
+
+.goto-news-btn {
+	background-color: transparent;
+	border: 3px solid var(--primary);
+	color: var(--text);
+	transition: all 0.3s;
+}
+
+.goto-news-btn:hover {
+	border: 3px solid var(#770d16);
 }
 
 /* REGISTER SUB PAGE */
@@ -211,13 +300,18 @@ a:hover::before {
 .news_section {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 2rem;
-	margin-inline: auto;
-	max-width: 1200px;
+	margin: 4rem auto;
+	max-width: 1400px;
 }
 
-.news_section h2 {
-	font-style: italic;
+.news_title {
+	font-family: 'gresham', Arial, sans-serif;
+	font-size: 6rem;
+}
+
+.news_list {
 }
 
 /* POST TITLE */
@@ -273,72 +367,4 @@ a:hover::before {
 .loadMoreBtn:disabled {
 	background-color: #999;
 	cursor: not-allowed;
-}
-
-/* DROPDOWN */
-
-.dropdown {
-	position: relative;
-}
-
-.dropdown-toggle {
-	background: none;
-	border: none;
-	cursor: pointer;
-}
-
-.dropdown-content {
-	position: absolute;
-	top: 95%;
-	left: 0;
-	background: #1f1f1f;
-	min-width: 500px;
-	display: flex;
-	gap: 2rem;
-	padding: 1rem;
-	border-radius: 0.5rem;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-	opacity: 0;
-	transform: translateY(-10px);
-	transition: all 0.3s;
-	pointer-events: none;
-	z-index: 10;
-}
-
-.dropdown:hover .dropdown-content {
-	opacity: 1;
-	transform: translateY(0);
-	pointer-events: auto;
-}
-
-.dropdown-category {
-	flex: 1;
-}
-
-.dropdown-category h4 {
-	margin-bottom: 0.5rem;
-	font-size: 1rem;
-	color: var(--primary, #b0111ebf);
-}
-
-/* Nowość: 2 kolumny w każdej kategorii */
-.link-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(100px, 1fr));
-	gap: 0.25rem 1rem;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.link-grid li a {
-	display: block;
-	color: #ddd;
-	text-decoration: none;
-	padding: 0.25rem 0;
-}
-
-.link-grid li a:hover {
-	color: white;
-	text-decoration: underline;
 }
