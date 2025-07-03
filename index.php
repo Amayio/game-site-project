@@ -4,6 +4,7 @@ define('PAGE', $_GET['page'] ?? 'home');
 
 $standalone_pages = [
     'account/create' => 'register.php',
+    'account/manage' => 'manageAcc.php'
 ];
 
 if (isset($standalone_pages[PAGE])) {
@@ -63,8 +64,13 @@ if (isset($standalone_pages[PAGE])) {
 
                 <a class="nav_item" href="<?php echo getLink('downloads'); ?>">Download</a>
                 <a class="nav_item" href="<?php echo getLink('highscores'); ?>">Premium</a>
-                <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
-                <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Log in</a>
+                <?php if ($logged): ?>
+    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Manage Account</a>
+    <a class="nav_item" href="<?php echo getLink('account/logout'); ?>">Log out</a>
+<?php else: ?>
+    <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
+    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Log in</a>
+<?php endif; ?>
             </nav>
 
             <div class="server_status_box">

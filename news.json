@@ -1,37 +1,49 @@
 [
 	{
-		"id": 3,
-		"title": "Patch 1.0: A po burzy przychodzi słońce. qwdqwdqwdqwdqwdqwdqwdqwdwqdqwdqwdwqqqqqqqqqqqqqqqqqqwdqwdqwdqwdqwdqwdqwdqwdqwdwqd",
-		"date": "2025-06-30",
+		"id": 10,
+		"title": "Patch 2.0: Przebudzenie Sharingana i reformy klanów",
+		"date": "2025-07-01",
 		"blocks": [
 			{
+				"type": "paragraph",
+				"text": "Aktualizacja 2.0 wprowadza największe zmiany w systemie klanów od początku istnienia gry. Szczególną uwagę poświęcono Uchiha i Hyuuga, a nowa mechanika 'Przebudzenia' wprowadza dynamiczne zmiany w trakcie walki."
+			},
+			{
 				"type": "list",
-				"title": "Zmiany klas postaci",
+				"title": "Zmiany w klanach",
 				"items": [
 					{
-						"title": "Wojownik",
+						"title": "Uchiha",
 						"changes": [
 							{
-								"text": "Zwiększono obrażenia umiejętności 'Rąbnięcie' o 15%",
+								"text": "Dodano tryb 'Mangekyou Sharingan' jako przebudzenie po utracie 50% HP",
 								"changeType": "buff"
-							}
-						]
-					},
-					{
-						"title": "Łucznik",
-						"changes": [
+							},
 							{
-								"text": "Zmniejszono zasięg 'Strzały burzy' o 10%",
+								"text": "Zwiększono koszt chakry dla 'Amaterasu' o 20%",
 								"changeType": "nerf"
 							}
 						]
 					},
 					{
-						"title": "Mag",
+						"title": "Hyuuga",
 						"changes": [
 							{
-								"text": "Naprawiono błąd z podwójnym rzuceniem czaru",
-								"changeType": "neutral"
+								"text": "Zwiększono zasięg 'Juukenhou Hakke Rokujuuyon Shou' z 3 do 4 metrów",
+								"changeType": "buff"
+							},
+							{
+								"text": "Zredukowano czas działania 'Byakugana' z 10 do 8 sekund",
+								"changeType": "nerf"
+							}
+						]
+					},
+					{
+						"title": "Senju",
+						"changes": [
+							{
+								"text": "Dodano nową pasywną umiejętność 'Dziedzictwo Mokutonu', zwiększającą regenerację chakry",
+								"changeType": "buff"
 							}
 						]
 					}
@@ -39,99 +51,137 @@
 			},
 			{
 				"type": "paragraph",
-				"text": "Oprócz tego wprowadzono kilka poprawek do systemu dobierania graczy."
+				"text": "Wprowadzono również system honoru klanowego – gracze, którzy osiągną mistrzostwo w stylu walki klanu, odblokowują specjalne ozdoby i efekty wizualne."
 			},
 			{
 				"type": "image",
-				"src": "balance-chart.jpg",
-				"alt": "Zmiany balansu",
+				"src": "1.jpg",
+				"alt": "Nowe efekty Sharingana",
 				"width": "300",
-				"align": "right"
-			}
-		]
-	},
-	{
-		"id": 2,
-		"title": "Patch 0.9.5: Nowe umiejętności i optymalizacje",
-		"date": "2025-06-15",
-		"blocks": [
-			{
-				"type": "list",
-				"title": "Zmiany w rozgrywce",
-				"items": [
-					{
-						"title": "Zabójca",
-						"changes": [
-							{
-								"text": "Dodano nową umiejętność 'Cichy Cios'",
-								"changeType": "buff"
-							},
-							{
-								"text": "Zmniejszono czas odnowienia 'Zniknięcia' z 15s do 12s",
-								"changeType": "buff"
-							}
-						]
-					},
-					{
-						"title": "Ogólne",
-						"changes": [
-							{
-								"text": "Poprawiono płynność animacji podczas walki",
-								"changeType": "neutral"
-							}
-						]
-					}
-				]
-			},
-			{
-				"type": "paragraph",
-				"text": "Aktualizacja znacząco poprawia balans rozgrywki dla graczy PvP."
-			}
-		]
-	},
-	{
-		"id": 1,
-		"title": "Patch 0.9.0: Wprowadzenie systemu gildii",
-		"date": "2025-05-20",
-		"blocks": [
-			{
-				"type": "list",
-				"title": "Nowe funkcje",
-				"items": [
-					{
-						"title": "Gildie",
-						"changes": [
-							{
-								"text": "Wprowadzono system tworzenia i zarządzania gildiami",
-								"changeType": "neutral"
-							},
-							{
-								"text": "Liderzy gildii mogą zapraszać i usuwać członków",
-								"changeType": "neutral"
-							}
-						]
-					},
-					{
-						"title": "Interfejs",
-						"changes": [
-							{
-								"text": "Dodano zakładkę 'Gildia' w menu głównym",
-								"changeType": "neutral"
-							}
-						]
-					}
-				]
-			},
-			{
-				"type": "paragraph",
-				"text": "Jest to największa aktualizacja społecznościowa od czasu uruchomienia gry!"
+				"align": "right",
+				"justifySelf": "end"
 			},
 			{
 				"type": "image",
-				"src": "guild-system.jpg",
-				"alt": "Nowy system gildii",
-				"width": "500",
-				"align": "left"
+				"src": "2.jpg",
+				"alt": "Reformy systemu klanów"
+			}
+		]
+	},
+
+	{
+		"id": 9,
+		"title": "Patch 1.9.0: Pustkowia Kage – nowa mapa i reżim walki PvP",
+		"date": "2025-06-20",
+		"blocks": [
+			{
+				"type": "paragraph",
+				"text": "Do gry wprowadzono nową, rozległą mapę 'Pustkowia Kage', będącą tłem dla epickich bitew pomiędzy elitarnymi ninja. Aktualizacja obejmuje również nowy system rankingowy PvP z ligami i sezonami."
+			},
+			{
+				"type": "list",
+				"title": "Zmiany w PvP",
+				"items": [
+					{
+						"title": "Nowe zasady sezonów",
+						"changes": [
+							{
+								"text": "Sezony trwają teraz 4 tygodnie, z resetem punktów na początku każdego",
+								"changeType": "neutral"
+							},
+							{
+								"text": "Dodano ligę S – dostępna tylko dla top 1% graczy",
+								"changeType": "buff"
+							}
+						]
+					},
+					{
+						"title": "Mapy",
+						"changes": [
+							{
+								"text": "Dodano mapę 'Pustkowia Kage' z dynamiczną pogodą i mgłą wojny",
+								"changeType": "buff"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "image",
+				"src": "3.jpg",
+				"alt": "Mapa Pustkowia Kage",
+				"width": "300",
+				"align": "right",
+				"justifySelf": "end"
+			},
+			{
+				"type": "paragraph",
+				"text": "Pierwszy sezon PvP rozpocznie się 5 lipca 2025 r. Wszyscy gracze otrzymają darmowy reset statystyk postaci."
+			},
+			{
+				"type": "image",
+				"src": "3.jpg",
+				"alt": "Nowy system rankingowy PvP"
+			}
+		]
+	},
+
+	{
+		"id": 8,
+		"title": "Patch 1.8.3: Kuchiyose no Jutsu – przywołania zyskały duszę",
+		"date": "2025-06-05",
+		"blocks": [
+			{
+				"type": "paragraph",
+				"text": "System przywołań (Kuchiyose no Jutsu) został gruntownie przebudowany. Teraz każde przyzwanie ma unikalne drzewko rozwoju, osobowość i relację z graczem."
+			},
+			{
+				"type": "list",
+				"title": "Zmiany przywołań",
+				"items": [
+					{
+						"title": "Gamabunta (żaba)",
+						"changes": [
+							{
+								"text": "Zwiększono jego czas trwania z 10s do 15s",
+								"changeType": "buff"
+							},
+							{
+								"text": "Dodano nową umiejętność 'Strumień oleju ognistego'",
+								"changeType": "buff"
+							}
+						]
+					},
+					{
+						"title": "Katsuyu (ślimak)",
+						"changes": [
+							{
+								"text": "Zwiększono efekt leczenia o 25%",
+								"changeType": "buff"
+							},
+							{
+								"text": "Zmniejszono promień działania 'Auto-leczenia' z 10m do 6m",
+								"changeType": "nerf"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "paragraph",
+				"text": "Nowy system lojalności pozwala odblokować unikalne interakcje, a nawet cutscenki fabularne związane z legendarnymi przywołaniami."
+			},
+			{
+				"type": "image",
+				"src": "summon-system.jpg",
+				"alt": "Nowy system przywołań",
+				"width": "420",
+				"align": "right"
+			},
+			{
+				"type": "image",
+				"src": "gamabunta-cutscene.jpg",
+				"alt": "Gamabunta w nowej scenie"
 			}
 		]
 	}
