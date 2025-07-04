@@ -4,7 +4,11 @@ define('PAGE', $_GET['page'] ?? 'home');
 
 $standalone_pages = [
     'account/create' => 'register.php',
-    'account/manage' => 'manageAcc.php'
+    'account/manage' => 'manageAcc.php',
+    'account/change-email' => 'manageAcc.php',
+    'account/register' => 'manageAcc.php',
+    'account/change-info' => 'manageAcc.php',
+    'account/characters/create' => 'manageAcc.php',
 ];
 
 if (isset($standalone_pages[PAGE])) {

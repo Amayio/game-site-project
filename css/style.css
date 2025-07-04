@@ -40,6 +40,7 @@ li {
 body {
 	font-family: 'roboto', sans-serif;
 	color: var(--text);
+	-webkit-font-smoothing: antialiased;
 	background: fixed linear-gradient(transparent, #111 70%),
 		fixed
 			repeating-linear-gradient(
