@@ -9,6 +9,7 @@ const renderBlock = (block, container) => {
 	switch (block.type) {
 		case 'paragraph':
 			const p = document.createElement('p');
+			p.classList.add('news_content');
 			p.textContent = block.text;
 			container.appendChild(p);
 			break;
@@ -19,8 +20,7 @@ const renderBlock = (block, container) => {
 			container.appendChild(listTitle);
 
 			block.items.forEach(group => {
-				const groupTitle = document.createElement('p');
-				groupTitle.style.fontWeight = 'bold';
+				const groupTitle = document.createElement('h5');
 				groupTitle.textContent = `${group.title}:`;
 				container.appendChild(groupTitle);
 
@@ -113,6 +113,7 @@ const loadNextNews = () => {
 
 	if (currentIndex >= allNews.length) {
 		loadMoreBtn.disabled = true;
+		loadMoreBtn.textContent = 'No more to load';
 	}
 };
 

@@ -15,6 +15,8 @@
 	--primary: #b0111ebf;
 	--primary2: #b0111e;
 	--text: #f4f1ee;
+
+	--border-radius: 12px;
 }
 
 * {
@@ -222,10 +224,10 @@ a:hover::before {
 
 /* HERO SECTION */
 .hero {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: relative;
 	min-height: 100vh;
 	padding-block: 5rem;
 	overflow: hidden;
@@ -246,10 +248,10 @@ a:hover::before {
 .hero-content {
 	display: flex;
 	flex-direction: column;
-	max-width: 60%;
-	padding: 1rem;
+	max-width: 75%;
+	padding: 1.5rem;
 	text-align: center;
-	color: white;
+	color: var(--text);
 	z-index: 1;
 }
 
@@ -267,29 +269,36 @@ a:hover::before {
 .buttons-box {
 	display: flex;
 	justify-content: center;
-	gap: 0.8rem;
+	align-items: center;
+	gap: 2rem;
 }
 
-.cta-button,
-.goto-news-btn {
+/* .goto-news-btn,
+.cta {
+	display: inline-block;
 	border-radius: 12px;
 	padding: 1.5rem 2.5rem;
 	font-size: 1.2rem;
 	font-weight: bold;
 	cursor: pointer;
-}
+} */
 
-.cta-button {
-	background-color: var(--primary);
+.cta {
+	display: inline-block;
+	padding: 1.5rem 2.5rem;
+	border-radius: 12px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	background-color: var(--primary2);
 	transition: background-color 0.3s;
+	cursor: pointer;
 }
 
-.cta-button:hover {
+.cta:hover {
 	background-color: #770d16;
 }
 
 .goto-news-btn {
-	background-color: transparent;
 	border: 3px solid var(--primary);
 	color: var(--text);
 	transition: all 0.3s;
@@ -321,8 +330,10 @@ a:hover::before {
 /* NEWS SECTION */
 
 .news_section {
-	margin: 4rem auto;
+	display: grid;
+	place-items: center;
 	max-width: 1400px;
+	margin: 4rem auto 8rem;
 	padding: 0 2.5rem;
 }
 
@@ -334,6 +345,10 @@ a:hover::before {
 
 .news_card {
 	margin-bottom: 8rem;
+}
+
+.news_card:last-child {
+	margin-bottom: 4rem; /* przykładowa zmiana */
 }
 
 .news_grid {
@@ -361,13 +376,19 @@ a:hover::before {
 .news_right img,
 .news_full_image img {
 	max-width: 100%;
+	border-radius: 12px;
 	cursor: pointer;
-	border-radius: 6px;
 	transition: transform 0.2s;
 }
 
+.news_full_image img {
+	max-height: 250px;
+	object-fit: cover;
+	transition: transform 0.3s;
+}
+
 .news_right img:hover {
-	transform: scale(1.05);
+	transform: scale(1.03);
 }
 
 .news_full_image {
@@ -375,52 +396,98 @@ a:hover::before {
 	margin-top: 1rem;
 }
 
-.news_full_image img {
-	width: 100%; /* obrazek wypełnia szerokość kontenera */
-	max-height: 300px; /* maksymalna wysokość, np. 300px */
-	object-fit: cover; /* żeby obrazek się nie rozciągał */
-}
-
 /* POST TITLE */
-.news h3 {
+.news_left h3 {
 	font-size: 1.6rem;
-	margin-bottom: 2rem;
 }
 
 /* POST CONTENT */
-
-.news p {
-	margin-bottom: 1;
+.news_content {
+	margin-block: 1.5rem;
 }
 
-.news ul {
+.news_left ul {
 	padding-left: 1.2rem;
 	margin-bottom: 1rem;
 }
 
-.news li.buff {
-	color: #2ecc71;
-	list-style-type: '🟢 ';
+.news_left ul li {
+	position: relative;
+	padding-left: 1.3rem;
 }
 
-.news li.nerf {
-	color: #e74c3c;
-	list-style-type: '🔴 ';
-}
-
-.news li.neutral {
-	color: #3498db;
-	list-style-type: '🔵 ';
+.news_left ul li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background: url('../images/shuriken-svgrepo-com.svg') no-repeat center center;
+	background-size: contain;
 }
 
 .loadMoreBtn {
-	padding: 0.75rem 1.5rem;
-	font-size: 1rem;
-	cursor: pointer;
-	border: none;
-	border-radius: 6px;
-	background-color: #444;
-	color: white;
-	margin: 2rem auto;
 	display: block;
+	padding: 1rem 2.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+	border: none;
+	border-radius: 12px;
+	color: var(--text);
+	background-color: var(--primary2);
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.loadMoreBtn:hover {
+	background-color: #770d16;
+}
+
+.loadMoreBtn:disabled {
+	cursor: auto;
+	background-color: #383737;
+}
+
+/* FOOTER */
+
+footer {
+	background-color: #111;
+	padding: 40px 20px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.footer-col a {
+	color: #aaa;
+	text-decoration: none;
+	display: block;
+	margin: 6px 0;
+}
+
+.footer-col a:hover {
+	color: #fff;
+}
+
+.footer-col.center .logo {
+	width: 60px;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.footer-bottom {
+	text-align: center;
+	font-size: 0.9rem;
+	color: #888;
+}
+
+.footer-bottom a {
+	color: #ccc;
+	text-decoration: underline;
 }

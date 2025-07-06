@@ -19,8 +19,8 @@ defined('MYAAC') or die('Direct access not allowed!');
 </section>
     </main>
     
-    <footer>
-        <?php echo template_footer(); ?>
-    </footer>
+    <?php echo custom_footer(); ?>
+<?php echo template_place_holder('body_end'); ?>
+    <script src="<?php echo $template_path; ?>/js/script.js"></script>
 </body>
 </html>

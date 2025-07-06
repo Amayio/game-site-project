@@ -9,6 +9,7 @@ $standalone_pages = [
     'account/register' => 'manageAcc.php',
     'account/change-info' => 'manageAcc.php',
     'account/characters/create' => 'manageAcc.php',
+    'account/characters/delete' => 'manageAcc.php',
 ];
 
 if (isset($standalone_pages[PAGE])) {
@@ -68,13 +69,14 @@ if (isset($standalone_pages[PAGE])) {
 
                 <a class="nav_item" href="<?php echo getLink('downloads'); ?>">Download</a>
                 <a class="nav_item" href="<?php echo getLink('highscores'); ?>">Premium</a>
+
                 <?php if ($logged): ?>
-    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Manage Account</a>
-    <a class="nav_item" href="<?php echo getLink('account/logout'); ?>">Log out</a>
-<?php else: ?>
-    <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
-    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Log in</a>
-<?php endif; ?>
+                    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Manage Account</a>
+                    <a class="nav_item" href="<?php echo getLink('account/logout'); ?>">Log out</a>
+                <?php else: ?>
+                    <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
+                    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Log in</a>
+                <?php endif; ?>
             </nav>
 
             <div class="server_status_box">
@@ -105,7 +107,7 @@ if (isset($standalone_pages[PAGE])) {
                 <h1>Shinobi Chronicles</h1>
                 <p>Forge alliances or wage war — the ninja world is yours to shape.</p>
                 <div class="buttons-box">
-                    <a href="<?php echo getLink('account/create'); ?>" class="cta-button">Begin Shinobi Adventure</a>
+                    <a href="<?php echo getLink('account/create'); ?>" class="cta">Begin Shinobi Adventure</a>
                     <a href="#news" class="goto-news-btn">What's New</a>
                 </div>
             </div>
@@ -114,17 +116,13 @@ if (isset($standalone_pages[PAGE])) {
         <h2 class="news_title">NEWS</h2>
         <section id="news" class="news_section">
             <div class="news_list">
-                
+             
             </div>
             <button class="loadMoreBtn">Load more</button>
         </section>
     </main>
 
-    <footer>
-        <?php echo template_footer(); ?><br/>
-        <p>Template by Amai</p>
-    </footer>
-
+    <?php echo custom_footer(); ?>
     <?php echo template_place_holder('body_end'); ?>
     <script src="<?php echo $template_path; ?>/js/script.js"></script>
     <script type="module" src="<?php echo $template_path; ?>/js/handleNews.js"></script>
