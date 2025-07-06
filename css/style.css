@@ -15,6 +15,7 @@
 	--primary: #b0111ebf;
 	--primary2: #b0111e;
 	--text: #f4f1ee;
+	--text-dark: #222222;
 
 	--border-radius: 12px;
 }
@@ -95,6 +96,11 @@ body {
 	background: rgba(9, 9, 9, 0.85);
 	backdrop-filter: blur(5.5px);
 	border: 1px solid rgba(9, 9, 9, 1);
+}
+
+.header.shrink .players_status,
+.header.shrink .uptime {
+	display: none;
 }
 
 .nav {
@@ -241,7 +247,7 @@ a:hover::before {
 	min-width: 100%;
 	min-height: 100%;
 	object-fit: cover;
-	filter: brightness(0.5) grayscale(0.6) contrast(1.2);
+	filter: brightness(0.45) grayscale(0.6) contrast(1.2);
 	z-index: -1;
 }
 
@@ -258,6 +264,10 @@ a:hover::before {
 .hero-content h1 {
 	font-family: 'poeredcoat', sans-serif;
 	font-size: 6rem;
+	background: linear-gradient(90deg, #ffffff, #f3b5b5, #ff3939);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
@@ -289,23 +299,33 @@ a:hover::before {
 	border-radius: 12px;
 	font-size: 1.2rem;
 	font-weight: bold;
-	background-color: var(--primary2);
-	transition: background-color 0.3s;
+	color: var(--text-dark);
+	background-color: var(--text);
+	transition: all 0.3s;
 	cursor: pointer;
 }
 
 .cta:hover {
-	background-color: #770d16;
+	background-color: var(--text-dark);
+	color: var(--text);
 }
 
 .goto-news-btn {
-	border: 3px solid var(--primary);
+	padding: 1.5rem 2.5rem;
+	border: 2px solid var(--text);
+	border-radius: 12px;
 	color: var(--text);
+	font-size: 1.2rem;
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
 	transition: all 0.3s;
 }
 
 .goto-news-btn:hover {
-	border: 3px solid var(#770d16);
+	color: var(--text-darkgit);
 }
 
 /* REGISTER SUB PAGE */
@@ -413,6 +433,7 @@ a:hover::before {
 
 .news_left ul li {
 	position: relative;
+	margin-bottom: 0.3rem;
 	padding-left: 1.3rem;
 }
 
