@@ -1,6 +1,6 @@
 <?php
 defined('MYAAC') or die('Direct access not allowed!');
-define('PAGE', $_GET['page'] ?? 'home');
+$page = defined('PAGE') ? PAGE : 'home';
 
 $standalone_pages = [
     'account/create' => 'register.php',
@@ -12,8 +12,8 @@ $standalone_pages = [
     'account/characters/delete' => 'manageAcc.php',
 ];
 
-if (isset($standalone_pages[PAGE])) {
-    include __DIR__ . '/standalone/' . $standalone_pages[PAGE];
+if (isset($standalone_pages[$page])) {
+    include __DIR__ . '/standalone/' . $standalone_pages[$page];
     exit;
 }
 ?>
@@ -23,6 +23,7 @@ if (isset($standalone_pages[PAGE])) {
 <head>
     <?php echo template_place_holder('head_start'); ?>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo config('server_name'); ?> - Home</title>
     <link rel="stylesheet" href="<?php echo $template_path; ?>/css/style.css">
     <?php echo template_place_holder('head_end'); ?>
@@ -108,7 +109,7 @@ if (isset($standalone_pages[PAGE])) {
                 <p>Forge alliances or wage war — the ninja world is yours to shape.</p>
                 <div class="buttons-box">
                     <a href="<?php echo getLink('account/create'); ?>" class="cta">Begin Shinobi Adventure</a>
-                    <a href="#news" class="goto-news-btn">What's New</a>
+                    <button class="goto-news-btn">What's New</button>
                 </div>
             </div>
         </section>

@@ -6,6 +6,7 @@ defined('MYAAC') or die('Direct access not allowed!');
 <head>
     <?php echo template_place_holder('head_start'); ?>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account - <?php echo config('server_name'); ?></title>
     <link rel="stylesheet" href="<?php echo $template_path; ?>/css/style.css">
     <?php echo template_place_holder('head_end'); ?>
