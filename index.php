@@ -10,6 +10,7 @@ $standalone_pages = [
     'account/change-info' => 'manageAcc.php',
     'account/characters/create' => 'manageAcc.php',
     'account/characters/delete' => 'manageAcc.php',
+    'points' => 'shop.php',
 ];
 
 if (isset($standalone_pages[$page])) {
@@ -69,7 +70,7 @@ if (isset($standalone_pages[$page])) {
                 </div>
 
                 <a class="nav_item" href="<?php echo getLink('downloads'); ?>">Download</a>
-                <a class="nav_item" href="<?php echo getLink('highscores'); ?>">Premium</a>
+                <a class="nav_item" href="<?php echo getLink('points'); ?>">Premium</a>
 
                 <?php if ($logged): ?>
                     <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Manage Account</a>
