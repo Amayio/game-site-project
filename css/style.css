@@ -12,12 +12,14 @@
 }
 
 :root {
-	--primary: #b0111ebf;
-	--primary2: #b0111e;
+	--primary: #ad0a17;
 	--text: #f4f1ee;
+	--hover-light: #dbd9d6;
 	--text-dark: #222222;
 
 	--border-radius: 12px;
+
+	--h1-fontsize: clamp(2.5rem, 5vw + 1rem, 6rem);
 }
 
 * {
@@ -126,6 +128,16 @@ body {
 	cursor: pointer;
 }
 
+.arrow-icon {
+	display: inline-block;
+	vertical-align: middle;
+	transition: transform 0.3s ease;
+}
+
+.dropdown-toggle:hover .arrow-icon {
+	transform: rotate(-90deg);
+}
+
 .dropdown-content {
 	position: absolute;
 	top: 100%;
@@ -181,27 +193,19 @@ body {
 
 .nav_item {
 	position: relative;
-	font-size: 1.2rem;
+	font-size: clamp(0.8rem, 0.6vw + 0.5rem, 1rem);
 	font-weight: bold;
 	text-transform: uppercase;
 	color: var(--text);
-}
-
-.nav_item::before {
-	position: absolute;
-	content: '';
-	left: 0;
-	bottom: 3px;
-	width: 100%;
-	height: 8px;
-	background-color: var(--primary);
-	z-index: -1;
 	transition: all 0.3s ease-in-out;
 }
 
-a:hover::before {
-	bottom: 0;
-	height: 100%;
+.nav_item:hover {
+	text-shadow: 0 0 15px #ffffff;
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .server_status_box {
@@ -256,7 +260,7 @@ a:hover::before {
 	min-width: 100%;
 	min-height: 100%;
 	object-fit: cover;
-	filter: brightness(0.4) grayscale(0.65) contrast(1.2);
+	filter: brightness(0.35) grayscale(0.65) contrast(1.2);
 	z-index: -1;
 }
 
@@ -272,7 +276,7 @@ a:hover::before {
 
 .hero-content h1 {
 	font-family: 'poeredcoat', sans-serif;
-	font-size: 6rem;
+	font-size: var(--h1-fontsize);
 	background: linear-gradient(90deg, #ffffff, #f3b5b5, #ff3939);
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -281,7 +285,7 @@ a:hover::before {
 
 .hero-content p {
 	margin-bottom: 4rem;
-	font-size: 1.4rem;
+	font-size: clamp(0.95rem, 1vw + 0.5rem, 1.4rem);
 	font-weight: bold;
 }
 
@@ -295,39 +299,44 @@ a:hover::before {
 .cta {
 	display: inline-block;
 	padding: 1.5rem 2.5rem;
-	border-radius: 12px;
 	font-size: 1.2rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: var(--text-dark);
+	color: var(--text);
 	background-color: var(--text);
+	border: 4px solid var(--primary);
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 12px;
 	transition: all 0.3s;
 	cursor: pointer;
 }
 
 .cta:hover {
-	background-color: var(--text-dark);
-	color: var(--text);
+	filter: sepia(0.7);
 }
 
 .goto-news-btn {
+	position: relative;
 	padding: 1.5rem 2.5rem;
-	border: 2px solid var(--text);
-	border-radius: 12px;
 	color: var(--text);
 	font-size: 1.2rem;
+	font-weight: bold;
 	text-transform: uppercase;
 	background: rgba(255, 255, 255, 0.2);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border: 4px solid rgba(255, 255, 255, 0.3);
+	border-radius: 12px;
 	transition: all 0.3s;
 	cursor: pointer;
 }
 
 .goto-news-btn:hover {
-	color: var(--text-darkgit);
+	filter: sepia(0.7);
 }
 
 /* REGISTER SUB PAGE */
@@ -462,7 +471,7 @@ a:hover::before {
 	border: none;
 	border-radius: 12px;
 	color: var(--text);
-	background-color: var(--primary2);
+	background-color: var(--primary);
 	cursor: pointer;
 	transition: background-color 0.3s;
 }

@@ -42,6 +42,9 @@ if (isset($standalone_pages[$page])) {
                 <div class="dropdown">
                     <button class="nav_item dropdown-toggle" aria-expanded="false">
                         Game Guide
+                        <svg class="arrow-icon" width="25" height="25" viewBox="0 0 24 24">
+                            <path d="M8 9l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
                     </button>
                     <div class="dropdown-content">
                         <div class="dropdown-category">
@@ -110,7 +113,7 @@ if (isset($standalone_pages[$page])) {
                 <p>Forge alliances or wage war — the ninja world is yours to shape.</p>
                 <div class="buttons-box">
                     <a href="<?php echo getLink('account/create'); ?>" class="cta">Begin Shinobi Adventure</a>
-                    <button class="goto-news-btn">What's New</button>
+                    <button class="goto-news-btn">Release notes</button>
                 </div>
             </div>
         </section>
