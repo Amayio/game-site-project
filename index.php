@@ -1,16 +1,17 @@
 <?php
 defined('MYAAC') or die('Direct access not allowed!');
+
 $page = defined('PAGE') ? PAGE : 'home';
 
 $standalone_pages = [
-    'account/create' => 'register.php',
-    'account/manage' => 'manageAcc.php',
-    'account/change-email' => 'manageAcc.php',
-    'account/register' => 'manageAcc.php',
-    'account/change-info' => 'manageAcc.php',
-    'account/characters/create' => 'manageAcc.php',
-    'account/characters/delete' => 'manageAcc.php',
-    'points' => 'shop.php',
+    'account/create'              => 'register.php',
+    'account/manage'              => 'manageAcc.php',
+    'account/change-email'        => 'manageAcc.php',
+    'account/register'            => 'manageAcc.php',
+    'account/change-info'         => 'manageAcc.php',
+    'account/characters/create'   => 'manageAcc.php',
+    'account/characters/delete'   => 'manageAcc.php',
+    'points'                      => 'shop.php',
 ];
 
 if (isset($standalone_pages[$page])) {
@@ -29,9 +30,11 @@ if (isset($standalone_pages[$page])) {
     <link rel="stylesheet" href="<?php echo $template_path; ?>/css/style.css">
     <?php echo template_place_holder('head_end'); ?>
 </head>
-<body>
+<body class="home">
+
     <header class="header">
         <div class="header_wrapper">
+
             <div class="logo_container">
                 <a href="#">
                     <img width="80px" src="<?php echo $template_path; ?>/images/logo.png" alt="Logo" class="logo">
@@ -46,7 +49,9 @@ if (isset($standalone_pages[$page])) {
                             <path d="M8 9l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
                         </svg>
                     </button>
+
                     <div class="dropdown-content">
+
                         <div class="dropdown-category">
                             <h4>Server</h4>
                             <ul class="link-grid">
@@ -58,6 +63,7 @@ if (isset($standalone_pages[$page])) {
                                 <li><a href="#">Guilds</a></li>
                             </ul>
                         </div>
+
                         <div class="dropdown-category">
                             <h4>Game</h4>
                             <ul class="link-grid">
@@ -69,6 +75,7 @@ if (isset($standalone_pages[$page])) {
                                 <li><a href="#">Systems</a></li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
 
@@ -86,6 +93,7 @@ if (isset($standalone_pages[$page])) {
 
             <div class="server_status_box">
                 <p class="label server_status">Server Status</p>
+
                 <?php if (!$status['online']): ?>
                     <p class="offline_status">Status: <span class="offline">Offline</span></p>
                 <?php else: ?>
@@ -99,6 +107,7 @@ if (isset($standalone_pages[$page])) {
                     </p>
                 <?php endif; ?>
             </div>
+
         </div>
     </header>
 
@@ -111,6 +120,7 @@ if (isset($standalone_pages[$page])) {
             <div class="hero-content">
                 <h1>Shinobi Chronicles</h1>
                 <p>Forge alliances or wage war — the ninja world is yours to shape.</p>
+
                 <div class="buttons-box">
                     <a href="<?php echo getLink('account/create'); ?>" class="cta">Begin Shinobi Adventure</a>
                     <button class="goto-news-btn">Release notes</button>
@@ -119,17 +129,18 @@ if (isset($standalone_pages[$page])) {
         </section>
 
         <h2 class="news_title">NEWS</h2>
+
         <section id="news" class="news_section">
-            <div class="news_list">
-             
-            </div>
+            <div class="news_list"></div>
             <button class="loadMoreBtn">Load more</button>
         </section>
     </main>
 
     <?php echo custom_footer(); ?>
     <?php echo template_place_holder('body_end'); ?>
+
     <script src="<?php echo $template_path; ?>/js/script.js"></script>
     <script type="module" src="<?php echo $template_path; ?>/js/handleNews.js"></script>
+
 </body>
 </html>
