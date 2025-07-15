@@ -35,7 +35,7 @@ if (isset($standalone_pages[$page])) {
     <header class="header">
         <div class="header__wrapper">
 
-            <div class="logo__container">
+            <div class="logo_container">
                 <a href="#">
                     <img width="80px" src="<?php echo $template_path; ?>/images/logo.png" alt="Logo" class="logo">
                 </a>
@@ -43,18 +43,18 @@ if (isset($standalone_pages[$page])) {
 
             <nav class="nav">
                 <div class="nav__dropdown">
-                    <button class="nav__item nav__dropdown-toggle" aria-expanded="false">
+                    <button class="nav__item dropdown-toggle" aria-expanded="false">
                         Game Guide
-                        <svg class="nav__dropdown-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 9l6 6 6-6"/>
+                        <svg class="arrow-icon" width="25" height="25" viewBox="0 0 24 24">
+                            <path d="M8 9l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
                         </svg>
                     </button>
 
-                    <div class="nav__dropdown-content">
+                    <div class="dropdown-content">
 
-                        <div class="nav__dropdown-category">
+                        <div class="dropdown-category">
                             <h4>Server</h4>
-                            <ul class="nav__link-grid">
+                            <ul class="link-grid">
                                 <li><a href="#">Highscores</a></li>
                                 <li><a href="#">Characters</a></li>
                                 <li><a href="#">Who is Online?</a></li>
@@ -64,9 +64,9 @@ if (isset($standalone_pages[$page])) {
                             </ul>
                         </div>
 
-                        <div class="nav__dropdown-category">
+                        <div class="dropdown-category">
                             <h4>Game</h4>
-                            <ul class="nav__link-grid">
+                            <ul class="link-grid">
                                 <li><a href="#">World Map</a></li>
                                 <li><a href="#">Shinobi Roster</a></li>
                                 <li><a href="#">Bestiary</a></li>
@@ -79,39 +79,34 @@ if (isset($standalone_pages[$page])) {
                     </div>
                 </div>
 
-                <a class="nav__item" href="<?php echo getLink('downloads'); ?>">Download</a>
-                <a class="nav__item" href="<?php echo getLink('points'); ?>">Premium</a>
+                <a class="nav_item" href="<?php echo getLink('downloads'); ?>">Download</a>
+                <a class="nav_item" href="<?php echo getLink('points'); ?>">Premium</a>
 
                 <?php if ($logged): ?>
-                    <a class="nav__item" href="<?php echo getLink('account/manage'); ?>">Manage Account</a>
-                    <a class="nav__item" href="<?php echo getLink('account/logout'); ?>">Log out</a>
+                    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Manage Account</a>
+                    <a class="nav_item" href="<?php echo getLink('account/logout'); ?>">Log out</a>
                 <?php else: ?>
-                    <a class="nav__item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
-                    <a class="nav__item" href="<?php echo getLink('account/manage'); ?>">Log in</a>
+                    <a class="nav_item" href="<?php echo getLink('account/create'); ?>">Create Account</a>
+                    <a class="nav_item" href="<?php echo getLink('account/manage'); ?>">Log in</a>
                 <?php endif; ?>
             </nav>
 
-            <div class="header__server-status">
-    <p class="header__server-status-label header__server-status-title">Server Status</p>
+            <div class="server_status_box">
+                <p class="label server_status">Server Status</p>
 
-    <?php if (!$status['online']): ?>
-        <p class="header__server-status-info">
-            Status: <span class="header__server-status-offline">Offline</span>
-        </p>
-    <?php else: ?>
-        <p class="header__server-status-info">
-            Status: <span class="header__server-status-online">Online</span>
-        </p>
-        <p class="header__server-status-info">
-            <span class="header__server-status-label">Players Online:</span>
-            <?php echo $status['players']; ?> / <?php echo $status['playersMax']; ?>
-        </p>
-        <p class="header__server-status-info">
-            <span class="header__server-status-label">Uptime:</span>
-            <?php echo $status['uptimeReadable']; ?>
-        </p>
-    <?php endif; ?>
-</div>
+                <?php if (!$status['online']): ?>
+                    <p class="offline_status">Status: <span class="offline">Offline</span></p>
+                <?php else: ?>
+                    <p class="offline_status">Status: <span class="online">Online</span></p>
+                    <p class="players_status">
+                        <span class="label">Players Online:</span>
+                        <?php echo $status['players']; ?> / <?php echo $status['playersMax']; ?>
+                    </p>
+                    <p class="uptime">
+                        <span class="label">Uptime:</span> <?php echo $status['uptimeReadable']; ?>
+                    </p>
+                <?php endif; ?>
+            </div>
 
         </div>
     </header>

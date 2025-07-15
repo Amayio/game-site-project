@@ -57,7 +57,7 @@
 				"type": "image",
 				"src": "1.jpg",
 				"alt": "Nowe efekty Sharingana",
-				"width": "300",
+				"maxWidth": "250",
 				"align": "right",
 				"justifySelf": "end"
 			},
@@ -110,7 +110,7 @@
 				"type": "image",
 				"src": "3.jpg",
 				"alt": "Mapa Pustkowia Kage",
-				"width": "300",
+				"maxWidth": "250",
 				"align": "right",
 				"justifySelf": "end"
 			},
@@ -175,7 +175,7 @@
 				"type": "image",
 				"src": "summon-system.jpg",
 				"alt": "Nowy system przywołań",
-				"width": "420",
+				"maxWidth": "250",
 				"align": "right"
 			},
 			{

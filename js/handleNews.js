@@ -41,6 +41,7 @@ const renderBlock = (block, container) => {
 			img.alt = block.alt || '';
 			img.className = 'clickable_image';
 			img.style.width = block.width ? `${block.width}px` : '100%';
+			img.style.maxWidth = block.maxWidth ? `${block.maxWidth}px` : '';
 
 			if (block.justifySelf) {
 				img.style.justifySelf = block.justifySelf;
