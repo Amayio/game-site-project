@@ -102,11 +102,11 @@ if (isset($standalone_pages[$page])) {
         <p class="header__server-status-info">
             Status: <span class="header__server-status-online">Online</span>
         </p>
-        <p class="header__server-status-info">
+        <p class="header__server-status-info players_online">
             <span class="header__server-status-label">Players Online:</span>
             <?php echo $status['players']; ?> / <?php echo $status['playersMax']; ?>
         </p>
-        <p class="header__server-status-info">
+        <p class="header__server-status-info uptime">
             <span class="header__server-status-label">Uptime:</span>
             <?php echo $status['uptimeReadable']; ?>
         </p>
