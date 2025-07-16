@@ -8,6 +8,17 @@ html {
 	scroll-behavior: smooth;
 }
 
+html.scroll-lock,
+body.scroll-lock {
+	position: relative;
+	overflow: hidden;
+}
+
+body.scroll-lock {
+	padding-right: 15px;
+	transition: padding-right 0.3s;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;

@@ -112,7 +112,11 @@ if (isset($standalone_pages[$page])) {
         </p>
     <?php endif; ?>
 </div>
-
+<button class="hamburger hamburger--elastic" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>  
         </div>
     </header>
 
