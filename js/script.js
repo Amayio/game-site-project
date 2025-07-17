@@ -23,9 +23,11 @@ const handleMobileNav = () => {
 	document.body.classList.toggle('scroll-lock');
 
 	if (nav.classList.contains('is-active')) {
-		headerWrapper.style.backdropFilter = 'none';
+		// headerWrapper.style.backdropFilter = 'none';
+		header.classList.add('nav-open');
 	} else {
-		headerWrapper.style.backdropFilter = 'blur(4.2px)';
+		// headerWrapper.style.backdropFilter = 'blur(4.2px)';
+		header.classList.remove('nav-open');
 	}
 
 	navItems.forEach(item => {
