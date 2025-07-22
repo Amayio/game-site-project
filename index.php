@@ -33,7 +33,7 @@ if (isset($standalone_pages[$page])) {
 <body class="home">
 
 <header class="header">
-    <div class="header__wrapper">
+    <div class="header__wrapper"> 
 
         <div class="logo__container">
             <a href="#">
