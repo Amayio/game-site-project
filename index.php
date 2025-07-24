@@ -35,9 +35,9 @@ if (isset($standalone_pages[$page])) {
 <header class="header">
     <div class="header__wrapper"> 
 
-        <div class="logo__container">
-            <a href="#">
-                <img width="80px" src="<?php echo $template_path; ?>/images/logo.png" alt="Logo" class="logo">
+        <div class="header__logo">
+            <a href="#" class="header__logo-link">
+                <img width="80px" src="<?php echo $template_path; ?>/images/logo.png" alt="Logo" class="header__logo-image">
             </a>
         </div>
 
@@ -110,7 +110,7 @@ if (isset($standalone_pages[$page])) {
                 </p>
             <?php endif; ?>
         </div>
-
+<!-- hamburger button from library -->
         <button class="hamburger hamburger--elastic" type="button">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -132,7 +132,8 @@ if (isset($standalone_pages[$page])) {
 
             <div class="buttons-box">
                 <a href="<?php echo getLink('account/create'); ?>" class="cta">Begin Shinobi Adventure</a>
-                <button class="goto-news-btn">Release notes</button>
+                <p class="box-span">or read ours <span class="goto-news-btn">Release notes</span></p>
+                <button class="goto-news-btn mobile-invisible">Release notes</button>
             </div>
         </div>
     </section>
@@ -141,7 +142,7 @@ if (isset($standalone_pages[$page])) {
 
     <section id="news" class="news_section">
         <div class="news_list"></div>
-        <button class="loadMoreBtn">Load more</button>
+        <button class="loadMoreBtn">Load more news</button>
     </section>
 </main>
 

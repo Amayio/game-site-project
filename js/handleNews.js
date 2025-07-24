@@ -51,7 +51,7 @@ const renderBlock = (block, container) => {
 			break;
 
 		default:
-			console.warn('Nieznany typ bloku:', block.type);
+			console.warn('Unknown block type:', block.type);
 	}
 };
 
@@ -63,7 +63,7 @@ const renderNewsItem = item => {
 	const grid = document.createElement('div');
 	grid.className = 'news_grid';
 
-	// Left column
+	// Left column: main news content
 	const left = document.createElement('div');
 	left.className = 'news_left';
 
@@ -83,7 +83,7 @@ const renderNewsItem = item => {
 		renderBlock(block, left);
 	});
 
-	// Right column
+	// Right column: image
 	const right = document.createElement('div');
 	right.className = 'news_right';
 	const rightImg = item.blocks.find(
@@ -114,7 +114,7 @@ const loadNextNews = () => {
 
 	if (currentIndex >= allNews.length) {
 		loadMoreBtn.disabled = true;
-		loadMoreBtn.textContent = 'No more to load';
+		loadMoreBtn.textContent = 'All caught up!';
 	}
 };
 
