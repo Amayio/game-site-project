@@ -121,22 +121,24 @@ if (isset($standalone_pages[$page])) {
 </header>
 
 <main>
-    <section id="home" class="hero">
-        <video autoplay muted loop playsinline class="background-video">
-            <source src="<?php echo $template_path; ?>/images/hero_background.mp4" type="video/mp4">
-        </video>
+  <section id="home" class="hero">
+  <video autoplay muted loop playsinline class="hero__background-video">
+    <source src="<?php echo $template_path; ?>/images/hero_background.mp4" type="video/mp4">
+  </video>
 
-        <div class="hero-content">
-            <h1>Shinobi Chronicles</h1>
-            <p>Forge alliances or wage war — the ninja world is yours to shape.</p>
+  <div class="hero__content">
+    <h1 class="hero__title">Shinobi Chronicles</h1>
+    <p class="hero__subtitle">Forge alliances or wage war — the ninja world is yours to shape.</p>
 
-            <div class="buttons-box">
-                <a href="<?php echo getLink('account/create'); ?>" class="cta">Begin Shinobi Adventure</a>
-                <p class="box-span">or read ours <span class="goto-news-btn">Release notes</span></p>
-                <button class="goto-news-btn mobile-invisible">Release notes</button>
-            </div>
-        </div>
-    </section>
+    <div class="hero__buttons">
+      <a href="<?php echo getLink('account/create'); ?>" class="hero__cta">Begin Shinobi Adventure</a>
+      <p class="hero__alt">
+        or read ours <span class="hero__release-notes-btn">Release notes</span>
+      </p>
+      <button class="hero__release-notes-btn hero__release-notes-btn--mobile-invisible">Release notes</button>
+    </div>
+  </div>
+</section>
 
     <h2 class="news_title">NEWS</h2>
 

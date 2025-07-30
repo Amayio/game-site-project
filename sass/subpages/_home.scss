@@ -3,6 +3,7 @@
 body.home {
 	@include body-style;
 
+	// HERO SECTION
 	.hero {
 		position: relative;
 		display: flex;
@@ -13,31 +14,7 @@ body.home {
 		overflow: hidden;
 		z-index: 1;
 
-		&-content {
-			display: flex;
-			flex-direction: column;
-			max-width: 75%;
-			padding: 1.5rem;
-			text-align: center;
-			color: $text;
-			z-index: 1;
-
-			h1 {
-				font-family: 'poeredcoat', sans-serif;
-				font-size: $h1-fontsize;
-				background: linear-gradient(90deg, #fff, #f3b5b5, #ff3939);
-				background-clip: text;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-
-			p {
-				margin-block: 1rem 2.5rem;
-				font-size: clamp(0.95rem, 1vw + 0.5rem, 1.4rem);
-				font-weight: bold;
-			}
-		}
-		.background-video {
+		&__background-video {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -48,56 +25,86 @@ body.home {
 			z-index: -1;
 		}
 
-		.buttons-box {
+		&__content {
+			display: flex;
+			flex-direction: column;
+			max-width: 75%;
+			padding: 1.5rem;
+			text-align: center;
+			color: $text;
+			z-index: 1;
+		}
+
+		&__title {
+			font-family: 'poeredcoat', sans-serif;
+			font-size: $h1-fontsize;
+			background: linear-gradient(90deg, #fff, #f3b5b5, #ff3939);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		&__subtitle {
+			margin-block: 1rem 2.5rem;
+			font-size: clamp(0.95rem, 1vw + 0.5rem, 1.4rem);
+			font-weight: bold;
+		}
+
+		&__buttons {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			gap: 2rem;
+		}
 
-			.cta,
-			.goto-news-btn {
-				display: inline-block;
-				padding: clamp(0.6rem, 2vw + 0.3rem, 1.5rem)
-					clamp(1rem, 3vw + 0.3rem, 2.5rem);
-				font-size: $p-title-fontsize;
-				font-weight: bold;
-				text-transform: uppercase;
-				color: $text;
-				background: rgba(255, 255, 255, 0.2);
-				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-				backdrop-filter: blur(6px);
-				-webkit-backdrop-filter: blur(6px);
-				border-radius: 12px;
-				transition: all 0.3s;
-				cursor: pointer;
+		&__cta,
+		&__release-notes-btn {
+			display: inline-block;
+			padding: clamp(0.6rem, 2vw + 0.3rem, 1.5rem)
+				clamp(1rem, 3vw + 0.3rem, 2.5rem);
+			font-size: $p-title-fontsize;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: $text;
+			background: rgba(255, 255, 255, 0.2);
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(6px);
+			-webkit-backdrop-filter: blur(6px);
+			border-radius: 12px;
+			transition: all 0.3s;
+			cursor: pointer;
+		}
+
+		&__cta {
+			border: 4px solid $primary;
+
+			&:hover {
+				filter: sepia(0.7);
+			}
+		}
+
+		&__release-notes-btn {
+			border: 4px solid rgba(255, 255, 255, 0.3);
+
+			&:hover {
+				filter: sepia(0.7);
 			}
 
-			.cta {
-				border: 4px solid $primary;
+			&--mobile-invisible {
+				display: inline-block;
 
-				&:hover {
-					filter: sepia(0.7);
+				@media (max-width: 768px) {
+					display: none;
 				}
 			}
+		}
 
-			.goto-news-btn {
-				border: 4px solid rgba(255, 255, 255, 0.3);
-
-				&:hover {
-					filter: sepia(0.7);
-				}
-			}
-
-			.goto-news-btn.mobile-invisible {
-				display: inline-block;
-			}
-
-			.box-span {
-				display: none;
-			}
+		&__alt {
+			display: none;
 		}
 	}
 
+	// NEWS SECTION
 	.news_section {
 		display: grid;
 		place-items: center;
@@ -224,12 +231,6 @@ body.home {
 			cursor: default;
 			background-color: #383737;
 		}
-	}
-}
-
-@supports (height: 100dvh) {
-	body {
-		min-height: 100dvh;
 	}
 }
 
@@ -416,9 +417,9 @@ footer {
 	.footer-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 40px;
+		gap: 2.5rem;
 		text-align: center;
-		margin-bottom: 20px;
+		margin-bottom: 1.25rem;
 	}
 
 	.footer-col {
@@ -487,8 +488,26 @@ footer {
 @media (max-width: 866px) {
 	body.home {
 		.hero {
-			&-content {
+			&__content {
 				max-width: 95%;
+			}
+
+			&__release-notes-btn {
+				padding: 0;
+				background: none;
+				border: none;
+				box-shadow: none;
+				backdrop-filter: none;
+				-webkit-backdrop-filter: none;
+
+				&--mobile-invisible {
+					display: none;
+				}
+			}
+
+			&__alt {
+				display: block;
+				font-size: $p-title-fontsize;
 			}
 		}
 
@@ -519,7 +538,6 @@ footer {
 		}
 
 		&__wrapper {
-			.players_online,
 			.hamburger {
 				padding: 15px 15px;
 				display: inline-block;
@@ -652,34 +670,9 @@ footer {
 @media (max-width: 670px) {
 	body.home {
 		.hero {
-			.buttons-box {
+			&__buttons {
 				flex-direction: column;
 				gap: 1rem;
-
-				.goto-news-btn {
-					padding: 0;
-					text-transform: uppercase;
-					color: $text;
-					background: none;
-					border: none;
-					box-shadow: none;
-					backdrop-filter: none;
-					-webkit-backdrop-filter: none;
-					transition: all 0.3s;
-
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-
-				.goto-news-btn.mobile-invisible {
-					display: none;
-				}
-
-				.box-span {
-					display: block;
-					font-size: $p-title-fontsize;
-				}
 			}
 		}
 	}
